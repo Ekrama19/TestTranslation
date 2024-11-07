@@ -1,12 +1,19 @@
-
-import PropTypes from 'prop-types';  // Import PropTypes
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 function TranslationForm({ onSearch }) {
     const [englishWord, setEnglishWord] = useState("");
+    const [error, setError] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (englishWord.trim() === "") {
+            setError("Please enter a word.");
+            return;
+        }
+
+        setError(""); 
         onSearch(englishWord);
     };
 
@@ -19,12 +26,13 @@ function TranslationForm({ onSearch }) {
                 onChange={(e) => setEnglishWord(e.target.value)}
             />
             <button type="submit">Translate</button>
+            {error && <p style={{ color: "red" }}>{error}</p>}
         </form>
     );
-
-
 }
+
 TranslationForm.propTypes = {
     onSearch: PropTypes.func.isRequired,
 };
+
 export default TranslationForm;

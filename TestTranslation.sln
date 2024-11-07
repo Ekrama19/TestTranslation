@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTranslation", "TestTran
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "testtranslation.react", "TestTranslation.React\testtranslation.react.esproj", "{75088BC4-57A1-4CD5-A10B-6198FDFA34D9}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TestTranslation.DataBase", "TestTranslation.DataBase\TestTranslation.DataBase.sqlproj", "{8ABFD1F9-9D2E-4090-9CAA-5E2F8A9A1109}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,12 @@ Global
 		{75088BC4-57A1-4CD5-A10B-6198FDFA34D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75088BC4-57A1-4CD5-A10B-6198FDFA34D9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{75088BC4-57A1-4CD5-A10B-6198FDFA34D9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8ABFD1F9-9D2E-4090-9CAA-5E2F8A9A1109}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ABFD1F9-9D2E-4090-9CAA-5E2F8A9A1109}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ABFD1F9-9D2E-4090-9CAA-5E2F8A9A1109}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8ABFD1F9-9D2E-4090-9CAA-5E2F8A9A1109}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ABFD1F9-9D2E-4090-9CAA-5E2F8A9A1109}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ABFD1F9-9D2E-4090-9CAA-5E2F8A9A1109}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
