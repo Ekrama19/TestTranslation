@@ -22,13 +22,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-//app.UseCors("AllowAllOrigins");
 app.UseRouting();
-//app.UseEndpoints(endpoints =>
-//{
-//    endpoints.MapControllers();
-//});
-
 
 app.UseHttpsRedirection();
 

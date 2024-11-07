@@ -10,6 +10,12 @@ function App() {
     const handleSearch = async (englishWord) => {
         setError("");
         setHungarianWord("");
+
+        if (!englishWord.trim()) {
+            setError("Please enter a word.");
+            return;
+        }
+
         try {
             const translation = await getTranslation(englishWord);
             setHungarianWord(translation);
