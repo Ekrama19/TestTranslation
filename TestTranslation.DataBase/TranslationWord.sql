@@ -1,11 +1,11 @@
 ﻿
 CREATE TABLE [dbo].[TranslationWord](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[English] [varchar](120) NULL,
-	[Hungarian] [varchar](120) NULL,
+	[English] [varchar](Max) NULL,
+	[Hungarian] [varchar](MAX) NULL,
  CONSTRAINT [PK_TranslationWord] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY] 
 GO
