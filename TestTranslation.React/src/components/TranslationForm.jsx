@@ -12,13 +12,13 @@ function TranslationForm({ onSearch }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
+            <input style={{ marginLeft:"50px" }}
                 type="text"
                 placeholder="Enter English word"
                 value={englishWord}
                 onChange={(e) => setEnglishWord(e.target.value)}
             />
-            <button type="submit">Translate</button>
+            <button style={{ marginLeft: "50px" }} type="submit" className="btn btn-primary" > Translate</button>
         </form>
     );
 }

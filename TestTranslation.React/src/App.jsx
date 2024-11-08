@@ -25,7 +25,7 @@ function App() {
     };
 
     return (
-        <div style={{ padding: "20px" }}>
+        <div style={{ padding: "50px", marginLeft: "300px"}}>
             <h1>English to Hungarian Translation</h1>
             <TranslationForm onSearch={handleSearch} />
             <TranslationResult hungarianWord={hungarianWord} error={error} />
