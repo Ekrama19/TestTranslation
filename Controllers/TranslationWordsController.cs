@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TestTranslation;
+using TestTranslation.Interfaces;
 using TestTranslation.Models;
 
 namespace TestTranslation.Controllers
@@ -14,25 +15,28 @@ namespace TestTranslation.Controllers
     [ApiController]
     public class TranslationWordsController : Controller
     {
-        private readonly TranslationDBContext _context;
-
-        public TranslationWordsController(TranslationDBContext context)
+        private readonly ITranslationWordRepository _translationWordRepository;
+        public TranslationWordsController(ITranslationWordRepository translationWordRepository)
         {
-            _context = context;
+            _translationWordRepository = translationWordRepository;
         }
+
 
         [HttpGet("{English}")]
         public async Task<IActionResult> GetTranslation(string English)
         {
-            
-            if (!string.IsNullOrEmpty(English))
+            if (string.IsNullOrEmpty(English))
             {
-               var Text  = await _context.TranslationWord.FirstOrDefaultAsync(w => w.English.ToLower() == English.ToLower());
-                if (Text == null) return NotFound("Translation not found.");
-                return Ok(Text.Hungarian);
+                return BadRequest("The English word parameter is required.");
             }
 
-            return BadRequest("Something Went Wrong");
+            var text = await _translationWordRepository.GetTranslationAsync(English);
+            if (text == null)
+            {
+                return NotFound("Translation not found.");
+            }
+
+            return Ok(text.Hungarian);
         }
     }
 }
